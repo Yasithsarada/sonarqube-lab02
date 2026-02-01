@@ -14,15 +14,18 @@ public class UserService {
     public void findUser(String username) throws Exception {
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/db",
-                "root", password);
-             PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE name = ?")) {
+            "root", password);
+             PreparedStatement ps = conn.prepareStatement("SELECT id, name, email FROM users WHERE name = ?")) {
 
             ps.setString(1, username);
 
             try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    // process result if needed
-                }
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                // process result if needed
+            }
             }
         }
     }
