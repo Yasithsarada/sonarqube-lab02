@@ -21,9 +21,9 @@ public class UserService {
 
             try (ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String email = rs.getString("email");
+                // int id = rs.getInt("id");
+                // String name = rs.getString("name");
+                // String email = rs.getString("email");
                 // process result if needed
             }
             }
