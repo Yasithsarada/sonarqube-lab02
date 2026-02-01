@@ -19,11 +19,7 @@ public class UserService {
 
             ps.setString(1, username);
 
-            try (ResultSet rs = ps.executeQuery()) {
-            while (rs.next()) {
-                
-            }
-            }
+           
         }
     }
 
